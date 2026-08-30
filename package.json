@@ -1,0 +1,24 @@
+{
+  "name": "sauce_demo",
+  "version": "1.0.0",
+  "description": "",
+  "homepage": "https://github.com/sonam121294-max/sauce_demo#readme",
+  "bugs": {
+    "url": "https://github.com/sonam121294-max/sauce_demo/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sonam121294-max/sauce_demo.git"
+  },
+  "license": "ISC",
+  "author": "",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "test": "npm run"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.62.1",
+    "@types/node": "^26.4.0"
+  }
+}

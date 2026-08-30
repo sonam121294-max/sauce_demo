@@ -1,0 +1,235 @@
+
+Login and Fundamental- COMPLETED
+| TC ID  | Test Case                              | Playwright Concept                    |
+| ------ | -------------------------------------- | ------------------------------------- |
+| PW-001 | Verify SauceDemo page title            | `page.goto()`, `toHaveTitle()`        |
+| PW-002 | Verify login page elements             | Locators, `toBeVisible()`             |
+| PW-003 | Login with valid credentials           | `fill()`, `click()`, `toHaveURL()`    |
+| PW-004 | Login with invalid credentials         | Negative testing, text assertions     |
+| PW-005 | Login with locked-out user             | `getByTestId()`, assertions           |
+| PW-006 | Verify login button using role locator | `getByRole()`                         |-no role
+| PW-007 | Locate element using text              | `getByText()`                         |-no text
+| PW-008 | Locate login fields                    | `getByPlaceholder()` / `getByLabel()` |
+| PW-009 | Locate element using test ID           | `getByTestId()`                       |-no testid
+| PW-010 | Locate product using CSS               | `locator()`                           |-already done by TC 002
+| PW-011 | Locate product using XPath             | XPath locator                         |
+| PW-012 | Filter a specific product card         | `filter()`, `hasText`                 |
+| PW-013 | Use `first()`, `last()`, `nth()`       | Locator methods                       |
+
+
+Products - COMPLETED
+| TC ID  | Test Case                        | Playwright Concept         |
+| ------ | -------------------------------- | -------------------------- |
+| PW-014 | Verify product list is displayed | `toBeVisible()`            |
+| PW-015 | Verify number of products        | `toHaveCount()`            |
+| PW-016 | Sort products A → Z              | `selectOption()`           |
+| PW-017 | Sort products Z → A              | Dropdown + assertions      |
+| PW-018 | Sort products low → high         | Dropdown + data validation |
+| PW-019 | Sort products high → low         | Dropdown + data validation |
+| PW-020 | Open product details             | Navigation assertions      |
+| PW-021 | Verify product name/details      | Text assertions            |
+| PW-022 | Verify product price             | `toHaveText()`             |
+| PW-023 | Add one product to cart          | `click()`                  |
+| PW-024 | Add multiple products            | Loops + locators           |
+| PW-025 | Verify cart badge count          | `toHaveText()`             |
+
+
+Carts -COMPLETED
+| TC ID  | Test Case                          | Playwright Concept |
+| ------ | ---------------------------------- | ------------------ |
+| PW-026 | Open cart                          | Navigation         |
+| PW-027 | Verify product in cart             | Assertions         |
+| PW-028 | Verify product price in cart       | Assertions         |
+| PW-029 | Remove product from cart           | State change       |
+| PW-030 | Add product → remove product       | End-to-end flow    |-covered in 029
+| PW-031 | Add multiple products → remove one | Locator filtering  |-covered in 029
+| PW-032 | Verify cart badge after removal    | Assertions         |
+| PW-033 | Continue shopping from cart        | Navigation         |
+
+
+Checkout
+| TC ID  | Test Case                       | Playwright Concept    |
+| ------ | ------------------------------- | --------------------- |
+| PW-034 | Navigate to checkout            | Page navigation       |
+| PW-035 | Checkout with valid details     | `fill()`              |
+| PW-036 | Checkout with blank first name  | Negative testing      |
+| PW-037 | Checkout with blank last name   | Negative testing      |
+| PW-038 | Checkout with blank postal code | Negative testing      |
+| PW-039 | Verify checkout overview        | Assertions            |
+| PW-040 | Verify product in checkout      | Text assertions       |
+| PW-041 | Verify price in checkout        | Assertions            |
+| PW-042 | Complete an order               | E2E workflow          |
+| PW-043 | Verify order confirmation       | `toBeVisible()`, text |
+| PW-044 | Logout after completing order   | Menu interaction      |
+
+
+Hooks and Page object Model
+| TC ID  | Exercise                                   | Concept           |
+| ------ | ------------------------------------------ | ----------------- |
+| PW-045 | Create `LoginPage`                         | Page Object Model |
+| PW-046 | Move login actions into `LoginPage`        | POM methods       |
+| PW-047 | Create `ProductsPage`                      | POM               |
+| PW-048 | Create `CartPage`                          | POM               |
+| PW-049 | Create `CheckoutPage`                      | POM               |
+| PW-050 | Use `beforeEach()` for login/setup         | Hooks             |
+| PW-051 | Use `afterEach()` for cleanup              | Hooks             |
+| PW-052 | Create reusable end-to-end checkout method | POM abstraction   |
+
+
+Fixtures and Authentication
+| TC ID  | Exercise                                                 | Concept           |
+| ------ | -------------------------------------------------------- | ----------------- |
+| PW-053 | Create custom `loggedInPage` fixture                     | Custom fixtures   |
+| PW-054 | Use fixture in product tests                             | Fixture injection |
+| PW-055 | Save login state                                         | `storageState`    |
+| PW-056 | Reuse saved login state                                  | Authentication    |
+| PW-057 | Verify authenticated user can access products            | Auth state        |
+| PW-058 | Verify unauthenticated user cannot access protected page | Authentication    |
+
+Test Data and Prametrization
+| TC ID  | Exercise                           | Concept             |
+| ------ | ---------------------------------- | ------------------- |
+| PW-059 | Store users in JSON                | Test data           |
+| PW-060 | Run login test for multiple users  | Parameterization    |
+| PW-061 | Verify locked user                 | Data-driven testing |
+| PW-062 | Verify problem user                | Data-driven testing |
+| PW-063 | Add `@smoke` tag to critical tests | Tags                |
+| PW-064 | Run only `@smoke` tests            | `--grep`            |
+| PW-065 | Practice `test.skip()`             | Annotations         |
+| PW-066 | Practice `test.fail()`             | Annotations         |
+| PW-067 | Practice `test.fixme()`            | Annotations         |
+| PW-068 | Practice `test.slow()`             | Annotations         |
+
+
+Playwright configration
+| TC ID  | Exercise                        | Concept          |
+| ------ | ------------------------------- | ---------------- |
+| PW-069 | Configure `baseURL`             | `baseURL`        |
+| PW-070 | Configure test timeout          | `timeout`        |
+| PW-071 | Configure assertion timeout     | `expect.timeout` |
+| PW-072 | Run tests with multiple workers | `workers`        |
+| PW-073 | Enable full parallel execution  | `fullyParallel`  |
+| PW-074 | Configure retries               | `retries`        |
+| PW-075 | Intentionally use `test.only()` | `test.only()`    |
+| PW-076 | Enable `forbidOnly`             | **`forbidOnly`** |
+| PW-077 | Run with `CI=true`              | CI configuration |
+| PW-078 | Configure Chromium project      | `projects`       |
+| PW-079 | Configure Firefox project       | `projects`       |
+| PW-080 | Configure WebKit project        | `projects`       |
+| PW-081 | Configure screenshot on failure | `screenshot`     |
+| PW-082 | Configure video                 | `video`          |
+| PW-083 | Configure trace                 | `trace`          |
+| PW-084 | Configure HTML reporter         | `reporter`       |
+
+
+PW-076 is specifically your forbidOnly exercise
+
+Configure:
+
+forbidOnly: !!process.env.CI
+
+Then deliberately create:
+
+test.only('login test', async ({ page }) => {
+});
+
+Run:
+
+CI=true npx playwright test
+
+Expected:
+
+❌ Playwright should fail because .only() exists.
+
+Remove .only() and run again:
+
+✅ Tests should execute normally.
+
+
+Debugging and Reporting
+| TC ID  | Exercise                            | Concept         |
+| ------ | ----------------------------------- | --------------- |
+| PW-085 | Run test headed                     | `--headed`      |
+| PW-086 | Run test in debug mode              | `--debug`       |
+| PW-087 | Use Playwright UI mode              | `--ui`          |
+| PW-088 | Pause test execution                | `page.pause()`  |
+| PW-089 | Generate trace                      | Trace           |
+| PW-090 | Inspect failed test in Trace Viewer | Trace debugging |
+| PW-091 | Generate screenshot on failure      | Screenshots     |
+| PW-092 | Record video on failure             | Video           |
+| PW-093 | Generate HTML report                | HTML reporter   |
+| PW-094 | Open HTML report                    | `show-report`   |
+
+
+API testing
+| TC ID  | Test Case                       | Concept              |
+| ------ | ------------------------------- | -------------------- |
+| PW-095 | Send GET request                | `request.get()`      |
+| PW-096 | Validate GET status             | `response.status()`  |
+| PW-097 | Validate response JSON          | `response.json()`    |
+| PW-098 | Validate response headers       | `response.headers()` |
+| PW-099 | Send POST request               | `request.post()`     |
+| PW-100 | Send PUT request                | `request.put()`      |
+| PW-101 | Send PATCH request              | `request.patch()`    |
+| PW-102 | Send DELETE request             | `request.delete()`   |
+| PW-103 | Create test data through API    | API setup            |
+| PW-104 | Use API-created data in UI test | API + UI             |
+
+
+Network testing
+| TC ID  | Exercise                     | Concept              |
+| ------ | ---------------------------- | -------------------- |
+| PW-105 | Intercept API request        | `page.route()`       |
+| PW-106 | Mock successful API response | `route.fulfill()`    |
+| PW-107 | Mock 500 response            | Network mocking      |
+| PW-108 | Abort a request              | `route.abort()`      |
+| PW-109 | Continue intercepted request | `route.continue()`   |
+| PW-110 | Modify request headers       | Network interception |
+| PW-111 | Wait for API response        | `waitForResponse()`  |
+| PW-112 | Wait for API request         | `waitForRequest()`   |
+
+
+Advanced browser concepts
+| TC ID  | Exercise                             | Concept                    |
+| ------ | ------------------------------------ | -------------------------- |
+| PW-113 | Open a new tab                       | Multiple pages             |
+| PW-114 | Handle popup window                  | `waitForEvent('popup')`    |
+| PW-115 | Interact with iframe                 | `frameLocator()`           |
+| PW-116 | Upload a file                        | `setInputFiles()`          |
+| PW-117 | Download a file                      | `waitForEvent('download')` |
+| PW-118 | Handle alert                         | `dialog.accept()`          |
+| PW-119 | Handle confirmation dialog           | `dialog.dismiss()`         |
+| PW-120 | Handle prompt                        | Dialog API                 |
+| PW-121 | Perform keyboard actions             | `keyboard`                 |
+| PW-122 | Perform mouse actions                | `mouse`                    |
+| PW-123 | Drag and drop                        | Mouse / locator            |
+| PW-124 | Create two isolated browser contexts | `browser.newContext()`     |
+| PW-125 | Run two users simultaneously         | Browser contexts           |
+
+
+Mobile and cross browser
+| TC ID  | Exercise                                  | Concept          |
+| ------ | ----------------------------------------- | ---------------- |
+| PW-126 | Run SauceDemo on Chromium                 | Browser project  |
+| PW-127 | Run SauceDemo on Firefox                  | Browser project  |
+| PW-128 | Run SauceDemo on WebKit                   | Browser project  |
+| PW-129 | Run SauceDemo using mobile device profile | `devices`        |
+| PW-130 | Verify responsive product/cart behavior   | Mobile emulation |
+
+
+CI/CD 
+| TC ID  | Exercise                                   | Concept            |
+| ------ | ------------------------------------------ | ------------------ |
+| PW-131 | Run Playwright through CI                  | CI/CD              |
+| PW-132 | Install browsers in CI                     | Playwright install |
+| PW-133 | Run smoke tests in CI                      | `--grep`           |
+| PW-134 | Run regression suite                       | Full suite         |
+| PW-135 | Enable CI retries                          | `retries`          |
+| PW-136 | Verify `forbidOnly` in CI                  | `forbidOnly`       |
+| PW-137 | Store HTML report as artifact              | CI artifacts       |
+| PW-138 | Store screenshots/traces/videos            | CI artifacts       |
+| PW-139 | Run tests against environment variable URL | `process.env`      |
+| PW-140 | Run Chromium/Firefox/WebKit in CI          | Projects           |
+
+
+
