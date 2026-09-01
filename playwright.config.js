@@ -30,15 +30,28 @@ export default defineConfig({
     // baseURL: 'http://localhost:3000',
 
     /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
-    trace: 'on-first-retry',
+    trace: 'retain-on-failure',
+    screenshot: 'only-on-failure',
+    video: 'retain-on-failure',
+  },
+
+  timeout : 60 * 1000,
+
+  expect: {
+    timeout : 8000,
   },
 
   /* Configure projects for major browsers */
   projects: [
-    {
-      name: 'chromium',
-      use: { ...devices['Desktop Chrome'] },
-    }
+    // {
+    //   name: 'chromium',
+    //   use: { 
+    //     ...devices['Desktop Chrome'],
+    //     // baseURL : 'https://www.saucedemo.com/'
+    //     // storageState: 'playwright/.auth/user.json'
+    //    },
+      
+    // },
 
     // {
     //   name: 'firefox',
@@ -51,14 +64,14 @@ export default defineConfig({
     // },
 
     /* Test against mobile viewports. */
-    // {
-    //   name: 'Mobile Chrome',
-    //   use: { ...devices['Pixel 5'] },
-    // },
+    {
+      name: 'Mobile Chrome',
+      use: { ...devices['Pixel 5'] },
+    },
     // {
     //   name: 'Mobile Safari',
     //   use: { ...devices['iPhone 12'] },
-    // },
+    // }
 
     /* Test against branded browsers. */
     // {

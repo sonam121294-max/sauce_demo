@@ -1,14 +1,14 @@
 import { test, expect } from '@playwright/test';
+import { LoginPage} from '../pages/LoginPage'
 
 test.describe('Checkout', () => {
 
     test.beforeEach(async({page}) => {
+        let loginPage = new LoginPage(page);
+
         await page.goto('https://www.saucedemo.com/');
 
-        await page.locator('input[id="user-name"]').fill('standard_user');
-        await page.locator('input[id="password"]').fill('secret_sauce');
-        await page.locator('input[id="login-button"]').click();
-
+        await loginPage.login('standard_user', 'secret_sauce');
         let count = await page.locator('.inventory_item_name').count();
 
         for(let i=0; i <= (count-1); i++){
@@ -60,6 +60,34 @@ test.describe('Checkout', () => {
         await page.locator('#continue').click();
 
         expect( await page.locator('h3[data-test="error"]')).toHaveText('Error: Postal Code is required');
+    })
+
+    test('PW-042 | Complete an order ', async({page}) => {
+        await page.getByPlaceholder('First Name').fill('Mira');
+        await page.getByPlaceholder('Last Name').fill('Niar');
+        await page.getByPlaceholder('Zip/Postal Code').fill('856624');
+
+        await page.locator('#continue').click();
+        await page.locator('#finish').click();
+
+        expect( await page.locator('.complete-header')).toHaveText('Thank you for your order!');
+    })
+
+    test('PW-044 | Logout after completing order ', async({page}) => {
+        await page.getByPlaceholder('First Name').fill('Mira');
+        await page.getByPlaceholder('Last Name').fill('Niar');
+        await page.getByPlaceholder('Zip/Postal Code').fill('856624');
+
+        await page.locator('#continue').click();
+        await page.locator('#finish').click();
+
+        expect( await page.locator('.complete-header')).toHaveText('Thank you for your order!');
+
+        await page.locator('#react-burger-menu-btn').click();
+        await page.locator('#logout_sidebar_link').click();
+
+        expect( await page.locator('input[id="login-button"]')).toBeVisible();
+
     })
 
 

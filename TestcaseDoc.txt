@@ -47,7 +47,7 @@ Carts -COMPLETED
 | PW-033 | Continue shopping from cart        | Navigation         |
 
 
-Checkout
+Checkout - COMPLETED
 | TC ID  | Test Case                       | Playwright Concept    |
 | ------ | ------------------------------- | --------------------- |
 | PW-034 | Navigate to checkout            | Page navigation       |
@@ -55,15 +55,15 @@ Checkout
 | PW-036 | Checkout with blank first name  | Negative testing      |
 | PW-037 | Checkout with blank last name   | Negative testing      |
 | PW-038 | Checkout with blank postal code | Negative testing      |
-| PW-039 | Verify checkout overview        | Assertions            |
-| PW-040 | Verify product in checkout      | Text assertions       |
-| PW-041 | Verify price in checkout        | Assertions            |
+| PW-039 | Verify checkout overview        | Assertions            |verification already covered (concept wise)
+| PW-040 | Verify product in checkout      | Text assertions       |verification already covered (concept wise)
+| PW-041 | Verify price in checkout        | Assertions            |verification already covered (concept wise)
 | PW-042 | Complete an order               | E2E workflow          |
-| PW-043 | Verify order confirmation       | `toBeVisible()`, text |
+| PW-043 | Verify order confirmation       | `toBeVisible()`, text |covered ub 042
 | PW-044 | Logout after completing order   | Menu interaction      |
 
 
-Hooks and Page object Model
+Hooks and Page object Model - COMPLETED (concept wise)
 | TC ID  | Exercise                                   | Concept           |
 | ------ | ------------------------------------------ | ----------------- |
 | PW-045 | Create `LoginPage`                         | Page Object Model |
@@ -76,17 +76,17 @@ Hooks and Page object Model
 | PW-052 | Create reusable end-to-end checkout method | POM abstraction   |
 
 
-Fixtures and Authentication
+Fixtures and Authentication - COMPLETED
 | TC ID  | Exercise                                                 | Concept           |
 | ------ | -------------------------------------------------------- | ----------------- |
 | PW-053 | Create custom `loggedInPage` fixture                     | Custom fixtures   |
-| PW-054 | Use fixture in product tests                             | Fixture injection |
+| PW-054 | Use fixture in product tests                             | Fixture injection |covered in 054
 | PW-055 | Save login state                                         | `storageState`    |
 | PW-056 | Reuse saved login state                                  | Authentication    |
 | PW-057 | Verify authenticated user can access products            | Auth state        |
 | PW-058 | Verify unauthenticated user cannot access protected page | Authentication    |
 
-Test Data and Prametrization
+Test Data and Prametrization - COMPLETED
 | TC ID  | Exercise                           | Concept             |
 | ------ | ---------------------------------- | ------------------- |
 | PW-059 | Store users in JSON                | Test data           |
@@ -101,7 +101,7 @@ Test Data and Prametrization
 | PW-068 | Practice `test.slow()`             | Annotations         |
 
 
-Playwright configration
+Playwright configration - COMPLETED
 | TC ID  | Exercise                        | Concept          |
 | ------ | ------------------------------- | ---------------- |
 | PW-069 | Configure `baseURL`             | `baseURL`        |
@@ -146,7 +146,7 @@ Remove .only() and run again:
 ✅ Tests should execute normally.
 
 
-Debugging and Reporting
+Debugging and Reporting - COMPLETED
 | TC ID  | Exercise                            | Concept         |
 | ------ | ----------------------------------- | --------------- |
 | PW-085 | Run test headed                     | `--headed`      |
@@ -161,7 +161,7 @@ Debugging and Reporting
 | PW-094 | Open HTML report                    | `show-report`   |
 
 
-API testing
+API testing - COMPLETED
 | TC ID  | Test Case                       | Concept              |
 | ------ | ------------------------------- | -------------------- |
 | PW-095 | Send GET request                | `request.get()`      |
@@ -172,8 +172,8 @@ API testing
 | PW-100 | Send PUT request                | `request.put()`      |
 | PW-101 | Send PATCH request              | `request.patch()`    |
 | PW-102 | Send DELETE request             | `request.delete()`   |
-| PW-103 | Create test data through API    | API setup            |
-| PW-104 | Use API-created data in UI test | API + UI             |
+| PW-103 | Create test data through API    | API setup            |-understood concept
+| PW-104 | Use API-created data in UI test | API + UI             |-understood concept
 
 
 Network testing

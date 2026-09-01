@@ -3,11 +3,11 @@ import { test, expect } from '@playwright/test';
 test.describe('Cart', () => {
 
     test.beforeEach(async ({ page }) => {
-        await page.goto('https://www.saucedemo.com/');
+        await page.goto('https://www.saucedemo.com/inventory.html');
 
-        await page.locator('input[id="user-name"]').fill('standard_user');
-        await page.locator('input[id="password"]').fill('secret_sauce');
-        await page.locator('input[id="login-button"]').click();
+        // await page.locator('input[id="user-name"]').fill('standard_user');
+        // await page.locator('input[id="password"]').fill('secret_sauce');
+        // await page.locator('input[id="login-button"]').click();
 
         let count = await page.locator('.inventory_item_name').count();
 
