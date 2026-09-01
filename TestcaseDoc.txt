@@ -207,7 +207,7 @@ Advanced browser concepts
 | PW-125 | Run two users simultaneously         | Browser contexts           |
 
 
-Mobile and cross browser
+Mobile and cross browser - COMPLETED
 | TC ID  | Exercise                                  | Concept          |
 | ------ | ----------------------------------------- | ---------------- |
 | PW-126 | Run SauceDemo on Chromium                 | Browser project  |
@@ -215,7 +215,6 @@ Mobile and cross browser
 | PW-128 | Run SauceDemo on WebKit                   | Browser project  |
 | PW-129 | Run SauceDemo using mobile device profile | `devices`        |
 | PW-130 | Verify responsive product/cart behavior   | Mobile emulation |
-
 
 CI/CD 
 | TC ID  | Exercise                                   | Concept            |
